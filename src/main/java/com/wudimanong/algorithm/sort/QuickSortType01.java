@@ -1,4 +1,4 @@
-package com.wudimanong.algorithm;
+package com.wudimanong.algorithm.sort;
 
 import java.util.Arrays;
 
