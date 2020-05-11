@@ -1,0 +1,22 @@
+快速排序（Quick Sort）算法逻辑及代码实现
+2、算法时间复杂度：每一轮都通过拆分成两部分通过分治法进行比较，所以时间复杂度是->平均O（n*logn）；极端O（n^2）
+3、算法实现逻辑：
+   3.1、基本思路
+        通过分治法优化的交换排序算法（每一轮挑选一个基准元素，并让其他比它大的元素移动到数列的一遍，比它小的元素移动到数列的另外一遍）
+        基准元素的选择（随机）、元素的移动是核心
+   3.2、挖坑法实现
+        1）、给定数组及其启始位置、结束位置，将起始位置元素作为pivot基准元素并将启始位置作为坑位所以pivotIndex;
+        2）、定义两个指针left、right分别指向给定的起始位置、结束位置；
+        3）、外层循环（right>=left）表示比较未交叉；
+        4）、内层循环-1（right>=left），从right元素开始与pivot（基准元素比较），如果right位置元素大于pivot，则right--指针左移；
+            如果right元素小于pivot,则交换right元素与pivotIndex元素位置，并将right指针赋值给pivotIndex,与此同时left指针右移，并跳出本次循环；
+        5）、内层循环-2（right>=left），从left元素开始与pivot（基准元素比较），如果left位置元素小于pivot，则left++指针右移；
+            如果left元素大于pivot，则交换left元素与pivotIndex元素位置，并将left指针赋值给pivotIndex，与此同时right--指针左移，并跳出本次循环；
+        6）、外层循环结束，right指针与left指针重合，则将pivot基准元素复制给pivotIndex所在位置，并返回pivotIndex；
+        7）、1～6步只是实现一次排序，而快速排序的核心是通过二分法进行多次交换，所以，需要通过手工递归quickSort(array,startIndex,pivotIndex-1);
+             quickSort(array,pivotIndex+1,endIndex)进行拆分；
+   3.3、指针交换法实现元素移动
+
+
+
+

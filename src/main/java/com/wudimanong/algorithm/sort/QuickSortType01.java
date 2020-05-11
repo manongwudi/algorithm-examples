@@ -21,7 +21,7 @@ public class QuickSortType01 {
             return;
         }
         //得到基准元素的位置
-        int pivotIndex = partition02(arr, startIndex, endIndex);
+        int pivotIndex = partition(arr, startIndex, endIndex);
         //用分治法递归数列的两部分
         quickSort(arr, startIndex, pivotIndex - 1);
         quickSort(arr, pivotIndex + 1, endIndex);
